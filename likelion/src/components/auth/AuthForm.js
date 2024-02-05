@@ -91,7 +91,12 @@ const AuthForm = ({ type, form, onChange, onSubmit, error }) => {
               onChange={onChange}
               value={form.name}
             />
-            <SelectBox options={["FRONT", "BACK"]} type={type} name={"track"} />
+            <SelectBox
+              options={["FRONT", "BACK"]}
+              type={type}
+              name="track"
+              placeholder="트랙을 입력하세요."
+            />
             <StyledInput
               autoComplete="major"
               name="major"

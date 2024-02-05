@@ -55,9 +55,9 @@ const Option = styled.li`
   }
 `;
 
-const SelectBox = ({ options, type, name }) => {
+const SelectBox = ({ options, type, name, placeholder }) => {
   const [isShowOptions, setIsShowOptions] = useState(false);
-  const [currentValue, setCurrentValue] = useState("트랙을 선택하세요.");
+  const [currentValue, setCurrentValue] = useState(placeholder);
   const ref = useRef(null);
   const dispatch = useDispatch();
 
@@ -67,7 +67,7 @@ const SelectBox = ({ options, type, name }) => {
   }, []);
 
   useEffect(() => {
-    if (currentValue === "트랙을 선택하세요.") return;
+    if (currentValue === placeholder) return;
 
     dispatch(
       changeField({
@@ -76,12 +76,12 @@ const SelectBox = ({ options, type, name }) => {
         value: currentValue,
       })
     );
-  }, [dispatch, name, type, currentValue]);
+  }, [dispatch, name, type, currentValue, placeholder]);
 
   useEffect(() => {
     function onClickOutside(e) {
       if (ref.current && !ref.current.contains(e.target)) {
-        setIsShowOptions(!isShowOptions);
+        setIsShowOptions(false);
       }
     }
     document.addEventListener("mousedown", onClickOutside);
