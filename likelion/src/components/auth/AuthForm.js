@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import palette from "../../lib/styles/palette";
 import Button from "../common/Button";
+import SelectBox from "../common/SelectBox";
 
 /**
  * 회원가입 또는 로그인 폼을 보여준다.
@@ -90,12 +91,11 @@ const AuthForm = ({ type, form, onChange, onSubmit, error }) => {
               onChange={onChange}
               value={form.name}
             />
-            <StyledInput
-              autoComplete="track"
+            <SelectBox
+              options={["FRONT", "BACK"]}
+              type={type}
               name="track"
-              placeholder="트랙"
-              onChange={onChange}
-              value={form.track}
+              placeholder="트랙을 입력하세요."
             />
             <StyledInput
               autoComplete="major"
