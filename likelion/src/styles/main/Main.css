@@ -1,0 +1,11 @@
+#main_content_container {
+    margin: 0 auto;
+    background-color: #F0F0F0;
+}
+
+.main_category {
+    margin: 15px 0;
+    font-size: 25px;
+    font-weight: 900;
+    font-style: italic;
+}
