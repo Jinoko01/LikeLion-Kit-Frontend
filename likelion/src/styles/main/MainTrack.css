@@ -1,13 +1,13 @@
 #main_track_container {
     padding: 100px 250px;
-    width: 100%;
 }
 
 #main_tracks {
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 80px;
 }
 
 .main_track {
