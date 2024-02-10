@@ -3,7 +3,7 @@ import Responsive from "../common/Responsive";
 import Header from "../common/Header";
 
 const AboutBlock = styled.div`
-  margin-top: 5rem;
+  margin-top: 2rem;
 
   p {
     font-weight: 900;
