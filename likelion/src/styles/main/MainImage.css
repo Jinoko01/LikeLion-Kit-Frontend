@@ -1,5 +1,5 @@
 .main_image_container {
-    width: auto;
+    min-width: 1200px;
     margin: 0px auto;
     position: relative;
 }

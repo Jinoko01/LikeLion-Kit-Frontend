@@ -1,5 +1,6 @@
 #main_track_container {
-    padding: 100px 250px;
+
+    margin: 100px 0;
 }
 
 #main_tracks {
@@ -7,7 +8,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 80px;
+    gap: 60px;
 }
 
 .main_track {
@@ -33,7 +34,7 @@
     margin: 0 auto;
     line-height: 220px;
     font-weight: bold;
-    font-size: 22px;
+    font-size: 20px;
 }
 
 .main_track_hover {
