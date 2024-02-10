@@ -25,7 +25,7 @@ const Wrapper = styled(Responsive)`
   .navbar {
     display: flex;
     width: 60%;
-    justify-content: space-between;
+    justify-content: flex-start;
     position: relative;
     right: 2rem;
 
@@ -61,6 +61,10 @@ const Wrapper = styled(Responsive)`
       &:hover {
         color: ${palette.black[0]};
       }
+
+      & + .menu {
+        margin-left: 3rem;
+      }
     }
   }
 
@@ -81,6 +85,10 @@ const UserInfo = styled.div`
 
 const Header = ({ user, onLogout }) => {
   const menus = [
+    {
+      url: "/about",
+      name: "About",
+    },
     {
       url: "/about",
       name: "About",
