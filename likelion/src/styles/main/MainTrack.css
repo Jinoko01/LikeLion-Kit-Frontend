@@ -1,0 +1,49 @@
+#main_track_container {
+    padding: 100px 250px;
+}
+
+#main_tracks {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 80px;
+}
+
+.main_track {
+    width: 450px;
+    height: 220px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px 2px rgb(158, 158, 158);
+    display: flex;
+    color: black;
+}
+
+#main_track_front {
+    background-color: #FFA559;
+    opacity: 80%;
+}
+
+#main_track_back {
+    background-color: #FF6000;
+    opacity: 80%;
+}
+
+.main_track_default {
+    margin: 0 auto;
+    line-height: 220px;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.main_track_hover {
+    padding: 50px 50px;
+    cursor: pointer;
+    line-height: 150%;
+    align-items: center;
+    background-color: #2b2b2b;
+    color: white;
+    font-weight: 200;
+    border-radius: 20px;
+    font-style: italic;
+}
