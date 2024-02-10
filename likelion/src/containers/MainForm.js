@@ -33,4 +33,4 @@ const MainForm = () => {
     )
 }
 
-export default MainForm; 
+export default MainForm;
