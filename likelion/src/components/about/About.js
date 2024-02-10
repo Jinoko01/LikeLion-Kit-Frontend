@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Responsive from "../common/Responsive";
-import Header from "../common/Header";
+import HeaderContainer from "../../containers/common/Headercontainer";
 
 const AboutBlock = styled.div`
   margin-top: 2rem;
@@ -13,7 +13,7 @@ const AboutBlock = styled.div`
 const About = () => {
   return (
     <>
-      <Header />
+      <HeaderContainer />
       <Responsive>
         <AboutBlock>
           <p>
