@@ -23,6 +23,8 @@ const palette = {
     "#0c8599",
     "#0b7285",
   ],
+  lightorange: ["#FFB16F", "#FFA559"],
+  black: ["#626262", "#454545"],
 };
 
 export default palette;

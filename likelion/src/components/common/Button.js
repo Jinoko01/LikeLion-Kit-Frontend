@@ -11,6 +11,7 @@ const buttonStyle = css`
   color: white;
   outline: none;
   cursor: pointer;
+  text-decoration: none;
 
   background-color: ${palette.gray[8]};
   &:hover {
@@ -27,11 +28,11 @@ const buttonStyle = css`
     `}
 
   ${(props) =>
-    props.orange &&
+    props.lightorange &&
     css`
-      background-color: #ffa559;
+      background-color: ${palette.lightorange[1]};
       &:hover {
-        background-color: #ffb16f;
+        background-color: ${palette.lightorange[0]};
       }
     `}
   

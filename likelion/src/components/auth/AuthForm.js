@@ -107,7 +107,7 @@ const AuthForm = ({ type, form, onChange, onSubmit, error }) => {
           </>
         )}
         {error && <ErrorMessage>{error}</ErrorMessage>}
-        <ButtonWithMarginTop orange fullWidth>
+        <ButtonWithMarginTop lightorange fullWidth>
           {text}
         </ButtonWithMarginTop>
       </form>
