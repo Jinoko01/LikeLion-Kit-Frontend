@@ -18,6 +18,10 @@ const Wrapper = styled(Responsive)`
   align-items: center;
   justify-content: space-between;
 
+  .logo {
+    width: 5%;
+  }
+
   .navbar {
     display: flex;
     width: 60%;
@@ -87,11 +91,11 @@ const Header = ({ user, onLogout }) => {
     <>
       <HeaderBlock>
         <Wrapper>
-          <Link to="/">
+          <Link to="/" className="logo">
             <img
               src={`${process.env.PUBLIC_URL}/image/logo.png`}
               alt="logo"
-              style={{ width: "50%" }}
+              style={{ width: "100%" }}
             />
           </Link>
           <div className="navbar">
