@@ -26,20 +26,18 @@ const MainTrack = (props) => {
     //style
 
     const MainTrackBlock = styled.div`
-        margin: 100px 0;
-        border: 1px solid black;
+        margin: 100px auto;
+        width: 1000px;
     `
 
     const MainTracks = styled.div`
         display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 50px;
+        justify-content: space-between;
     `
 
     const MainTrack = styled.div`
-        width: 450px;
-        height: 220px;
+        width: 460px;
+        height: 250px;
         border-radius: 20px;
         box-shadow: 2px 2px 2px 2px rgb(158, 158, 158);
         display: flex;
@@ -48,12 +46,18 @@ const MainTrack = (props) => {
     `
 
     const MainTrackFront = styled.div`
+        display: block;
+        margin: 20px 0;
+        width: 460px;
         background-color: #FFA559;
         border-radius: 20px;
-        opacity: 80%;
+        opacity: 0.8;
+
     `
 
     const MainTrackBack = styled.div`
+        margin: 20px 0 20px 0;
+        width: 460px;
         background-color: #FF6000;
         border-radius: 20px;
         opacity: 80%;
@@ -61,15 +65,15 @@ const MainTrack = (props) => {
 
     const MainTrackDeault = styled.div`
         margin: 0 auto;
-        line-height: 220px;
+        line-height: 250px;
         font-weight: bold;
         font-size: 20px;   
     `
 
     const MainTrackHover = styled.div`
-        padding: 50px 50px;
+        padding: 60px 50px;
         cursor: pointer;
-        line-height: 150%;
+        line-height: 160%;
         align-items: center;
         background-color: #2b2b2b;
         color: white;
@@ -77,6 +81,30 @@ const MainTrack = (props) => {
         border-radius: 20px;
         font-style: italic; 
     `
+
+    const MainTrackImageBox = styled.div`
+        margin: 20px 0;
+        width: 460px;
+        height: 250px;
+        border-radius: 20px; 
+        box-shadow: 2px 2px 2px 2px rgb(158, 158, 158);    
+        overflow: hidden;
+    `;
+
+    const MainTrackImage = styled.img`
+        width: 460px;
+        height: 250px;
+        border-radius: 20px;    
+ 
+        &.front-img {
+            transform: scale(${props => (props.isHoveredFront ? '1.1' : '1')});
+        }
+
+        &.back-img {
+            transform: scale(${props => (props.isHoveredBack ? '1.1' : '1')});
+        }
+`;
+
 
     return (
         <MainTrackBlock>
@@ -99,6 +127,24 @@ const MainTrack = (props) => {
                             </MainTrackHover>}
                     </MainTrack>
                 </MainTrackFront>
+                <MainTrackImageBox>
+                    <MainTrackImage
+                        className='front-img'
+                        src={`${process.env.PUBLIC_URL} /image/front.png`}
+                        alt="front"
+                        isHoveredFront={isHoveredFront}
+                    />
+                </MainTrackImageBox>
+            </MainTracks>
+            <MainTracks>
+                <MainTrackImageBox>
+                    <MainTrackImage
+                        className='back-img'
+                        src={`${process.env.PUBLIC_URL} /image/back.png`}
+                        alt="back"
+                        isHoveredBack={isHoveredBack}
+                    />
+                </MainTrackImageBox>
                 <MainTrackBack>
                     <MainTrack
                         className="main_track"

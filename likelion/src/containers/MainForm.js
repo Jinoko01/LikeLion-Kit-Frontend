@@ -5,19 +5,12 @@ import MainEvents from "../components/main/MainEvents";
 const MainForm = () => {
 
     const MainBlock = styled.div`
-        min-width: 1000px;
+        min-width: 800px;
         background-color: #F0F0F0;
         overflow-x: hidden;
     `
 
-    const MainContent = styled.div`
-        margin: 0 200px;
-        border: 1px solid black;
-    `
-
     const MainCategory = styled.div`
-
-        margin: 10px 0;
         font-size: 22px;
         font-weight: 900;
         font-style: italic;
@@ -25,10 +18,11 @@ const MainForm = () => {
     return (
         <MainBlock>
             <MainImage></MainImage>
-            <MainContent>
+            <div>
                 <MainTrack mainCategory={MainCategory}></MainTrack>
+                <hr style={{ margin: '0 auto', width: '1200px' }}></hr>
                 <MainEvents mainCategory={MainCategory}></MainEvents>
-            </MainContent>
+            </div>
         </MainBlock>
     )
 }
