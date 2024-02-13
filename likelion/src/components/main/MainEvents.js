@@ -2,30 +2,29 @@ import MainEvent from "./MainEvent";
 import styled from "styled-components";
 import EventIcon from '@mui/icons-material/Event';
 
-const MainEvents = (props) => {
-
-    const MainEventsBlock = styled.div`
+const MainEventsBlock = styled.div`
         margin: 90px auto;
         width: 1000px;
         margin-bottom:
     `
 
-    const MainEventsTitle = styled.div`
+const MainEventsTitle = styled.div`
         display: flex;
     `
 
-    const MainEvents = styled.div`
+const MainEventBlock = styled.div`
         display: flex;
         justify-content: center;
         margin-bottom: 100px;
     `
 
-    const MainEventArrow = styled.img`
+const MainEventArrow = styled.img`
         margin: 0 10px;
         height: 20px;
         margin-top: 110px;
     `
 
+const MainEvents = (props) => {
     return (
         <MainEventsBlock>
             <MainEventsTitle>
@@ -35,7 +34,7 @@ const MainEvents = (props) => {
                 <EventIcon style={{ fontSize: '30px', margin: '2px 0 0 5px' }}></EventIcon>
             </MainEventsTitle>
             <div>
-                <MainEvents>
+                <MainEventBlock>
                     <MainEvent
                         month={"5월"}
                         title={"아이디어톤"}
@@ -59,8 +58,8 @@ const MainEvents = (props) => {
                         title={"공모전"}
                         content={"4,000여 명의 한국, 미국 학생들이 모여 트랙별 공모전을 통해 우수 인재를 발굴합니다."}
                     />
-                </MainEvents>
-                <MainEvents>
+                </MainEventBlock>
+                <MainEventBlock>
                     <MainEvent
                         month={"2월"}
                         title={"실리콘밸리 기업 탐방"}
@@ -82,7 +81,7 @@ const MainEvents = (props) => {
                             height: '133px', marginTop: "0px"
                         }}
                     />
-                </MainEvents>
+                </MainEventBlock>
             </div>
         </MainEventsBlock >
 

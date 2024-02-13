@@ -1,13 +1,11 @@
 import styled from "styled-components";
 
-const MainEvent = (props) => {
-
-    const MainEventBlock = styled.div`
+const MainEventBlock = styled.div`
         min-width: 280px;
         margin-top: 50px;
     `
 
-    const MainEventTitle = styled.div`
+const MainEventTitle = styled.div`
         margin: 0 auto;
         font-size: 18px;
         font-weight: bold;
@@ -22,7 +20,7 @@ const MainEvent = (props) => {
         box-shadow: 1px 1px 1px 1px rgb(158, 158, 158);
     `
 
-    const MainEventContent = styled.div`
+const MainEventContent = styled.div`
         padding: 50px 20px 0 20px;
         width: 280px;
         height: 140px;
@@ -35,6 +33,7 @@ const MainEvent = (props) => {
         line-height: 20px;
     `
 
+const MainEvent = (props) => {
 
     return (
         <MainEventBlock>
@@ -44,7 +43,6 @@ const MainEvent = (props) => {
                 <span> | </span>
                 <span>{props.title}</span>
             </MainEventTitle>
-
         </MainEventBlock>
     )
 }
