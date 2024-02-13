@@ -8,7 +8,7 @@ const MainImage = () => {
         margin: 0px auto;
     `
 
-    const MainImage = styled.img`
+    const MainImages = styled.img`
         width: 100%;
         vertical-align: middle;
     `
@@ -72,7 +72,7 @@ const MainImage = () => {
 
     return (
         <MainImageBlock>
-            <MainImage src={`${process.env.PUBLIC_URL}/image/kumoh.png`} alt="Kumoh" />
+            <MainImages src={`${process.env.PUBLIC_URL}/image/kumoh.png`} alt="Kumoh" />
             <MainText>
                 <FadeInX>
                     <MainTextTop>Possible To Reality</MainTextTop>

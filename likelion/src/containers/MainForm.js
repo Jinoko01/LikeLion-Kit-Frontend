@@ -2,19 +2,20 @@ import styled from "styled-components";
 import MainImage from "../components/main/MainImage";
 import MainTrack from "../components/main/MainTrack";
 import MainEvents from "../components/main/MainEvents";
-const MainForm = () => {
 
-    const MainBlock = styled.div`
+const MainBlock = styled.div`
         min-width: 800px;
         background-color: #F0F0F0;
         overflow-x: hidden;
     `
 
-    const MainCategory = styled.div`
+const MainCategory = styled.div`
         font-size: 22px;
         font-weight: 900;
         font-style: italic;
     `
+
+const MainForm = () => {
     return (
         <MainBlock>
             <MainImage></MainImage>
