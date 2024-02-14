@@ -23,7 +23,7 @@ const Wrapper = styled(Responsive)`
   justify-content: space-between;
 
   .logo {
-    width: 5%;
+    width: 3rem;
   }
 
   .navbar {
