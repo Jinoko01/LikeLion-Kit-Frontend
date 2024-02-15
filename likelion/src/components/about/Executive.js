@@ -52,6 +52,10 @@ const ExecutiveDiv = styled.div`
       font-weight: 600;
     }
   }
+
+  @media (max-width: 500px) {
+    width: 20rem;
+  }
 `;
 
 const executiveArr = [
