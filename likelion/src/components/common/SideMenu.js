@@ -29,7 +29,7 @@ const SideMenuBlock = styled.div`
   background: white;
   width: 290px;
 
-  &: @keyframes fadeInRight {
+  @keyframes fadeInRight {
     0% {
       opacity: 0;
       transform: translate3d(100%, 0, 0);
