@@ -5,8 +5,7 @@ const MainPage = () => {
     return (
         <div>
             <HeaderContainer />
-            <MainForm>
-            </MainForm>
+            <MainForm />
         </div>
     );
 };

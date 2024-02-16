@@ -3,8 +3,11 @@ import styled from "styled-components";
 
 const MainTracksBlock = styled.div`
   margin: 100px auto;
-  min-width: 290px;
-  width: 80%;
+  max-width: 1000px;
+
+  @media (max-width: 850px) {
+    width: 340px;
+  }
 `;
 
 const MainTracks = styled.div`
@@ -20,7 +23,11 @@ const MainTrackBlock = styled.div`
   display: flex;
   color: black;
   opacity: 80%;
-`;
+
+  @media (max-width: 850px) {
+    max-height: 200px;
+  }
+  `;
 
 const MainTrackFront = styled.div`
   display: block;
@@ -33,6 +40,7 @@ const MainTrackFront = styled.div`
 
   @media (max-width: 850px) {
     margin: 2rem auto;
+    width: 20rem;
   }
 `;
 
@@ -45,6 +53,7 @@ const MainTrackBack = styled.div`
 
   @media (max-width: 850px) {
     margin: 0 auto;
+    width: 20rem;
   }
 `;
 
@@ -53,6 +62,11 @@ const MainTrackDefault = styled.div`
   line-height: 250px;
   font-weight: bold;
   font-size: 20px;
+
+  @media (max-width: 850px) {
+    line-height: 200px;
+    font-size: 18px;
+  }
 `;
 
 const MainTrackHover = styled.div`
@@ -68,6 +82,8 @@ const MainTrackHover = styled.div`
 
   @media (max-width: 850px) {
     margin: 0 auto;
+    padding: 10% 9%;
+    font-size: 14px;
   }
 `;
 
