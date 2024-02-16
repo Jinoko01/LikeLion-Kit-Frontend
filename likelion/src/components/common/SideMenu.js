@@ -36,7 +36,6 @@ const SideMenuBlock = styled.div`
     }
     to {
       opacity: 1;
-      transform: translateZ(0);
     }
   }
 
