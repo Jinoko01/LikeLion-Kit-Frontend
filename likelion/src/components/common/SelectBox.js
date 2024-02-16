@@ -27,6 +27,10 @@ const StyledSelect = styled.div`
     right: 0px;
     color: #454545;
   }
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    "Abril Fatface", sans-serif;
 `;
 
 const Label = styled.label`

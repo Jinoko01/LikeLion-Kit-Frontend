@@ -5,6 +5,9 @@ import EventIcon from "@mui/icons-material/Event";
 const MainEventsBlock = styled.div`
   margin: 5rem auto;
   max-width: 1000px;
+  @media (max-width: 1020px) {
+    display: none;
+  }
 `;
 
 const MainEventsTitle = styled.div`
