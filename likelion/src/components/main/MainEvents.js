@@ -29,7 +29,7 @@ const MainEvents = (props) => {
       <MainEventsTitle>
         <props.mainCategory>▶ 주요 행사</props.mainCategory>
         <EventIcon
-          style={{ fontSize: "30px", margin: "2px 0 0 5px" }}
+          style={{ fontSize: "30px", marginTop: "-3px", marginLeft: "5px" }}
         ></EventIcon>
       </MainEventsTitle>
       <div>
@@ -83,7 +83,7 @@ const MainEvents = (props) => {
           />
         </MainEventBlock>
       </div>
-    </MainEventsBlock>
+    </MainEventsBlock >
   );
 };
 

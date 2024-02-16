@@ -34,7 +34,7 @@ const About = () => {
               fontSize: "32px",
               margin: "2px 0 0 5px",
               position: "relative",
-              top: "6px",
+              top: "8px",
             }}
           />
         </p>
@@ -46,7 +46,7 @@ const About = () => {
               fontSize: "32px",
               margin: "2px 0 0 5px",
               position: "relative",
-              top: "8px",
+              top: "10px",
             }}
           />{" "}
         </p>

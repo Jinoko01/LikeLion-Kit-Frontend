@@ -73,8 +73,6 @@ const MainForm = () => {
         <div>
           <MainTrack mainCategory={MainCategory}></MainTrack>
           <hr style={{ margin: "0 auto", width: "1200px" }}></hr>
-          {/* <MainEvents mainCategory={MainCategory} eventList={eventList} />
-          <MainEventsResizable mainCategory={MainCategory} eventList={eventList} /> */}
           {
             resize < 850 ?
               <MainEventsResizable mainCategory={MainCategory} eventList={eventList} /> :
