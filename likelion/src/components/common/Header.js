@@ -73,7 +73,7 @@ const Wrapper = styled(Responsive)`
         margin-left: 3rem;
       }
 
-      @media (max-width: 850px) {
+      @media (max-width: 900px) {
         display: none;
       }
     }
@@ -82,7 +82,7 @@ const Wrapper = styled(Responsive)`
   .right {
     display: flex;
     align-items: center;
-    @media (max-width: 850px) {
+    @media (max-width: 900px) {
       display: none;
     }
   }
@@ -91,7 +91,7 @@ const Wrapper = styled(Responsive)`
     display: none;
     cursor: pointer;
 
-    @media (max-width: 850px) {
+    @media (max-width: 900px) {
       display: flex;
       align-items: center;
     }
