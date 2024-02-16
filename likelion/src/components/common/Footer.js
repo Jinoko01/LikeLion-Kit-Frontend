@@ -19,6 +19,11 @@ const FooterBlock = styled.div`
 
     .content {
       font-size: 0.7rem;
+
+      a {
+        color: black;
+        text-decoration: none;
+      }
     }
 
     div {
@@ -52,7 +57,7 @@ const Footer = () => {
               marginRight: "3px",
             }}
           />
-          문의처: dswvgw6412@naver.com
+          문의처: <a href="mailto:dswvgw6412@naver.com">dswvgw6412@naver.com</a>
         </div>
         <div className="link">
           <a
