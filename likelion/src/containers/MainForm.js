@@ -74,7 +74,7 @@ const MainForm = () => {
           <MainTrack mainCategory={MainCategory}></MainTrack>
           <hr style={{ margin: "0 auto", width: "1200px" }}></hr>
           {
-            resize < 850 ?
+            resize < 1020 ?
               <MainEventsResizable mainCategory={MainCategory} eventList={eventList} /> :
               <MainEvents mainCategory={MainCategory} eventList={eventList} />
           }

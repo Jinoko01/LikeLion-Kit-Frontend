@@ -14,6 +14,9 @@ const HeaderBlock = styled.div`
   background-color: white;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
   z-index: 31;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    "Abril Fatface", sans-serif;
 `;
 
 const Wrapper = styled(Responsive)`
