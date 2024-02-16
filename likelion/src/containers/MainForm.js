@@ -1,4 +1,3 @@
-import { React, useState, useEffect } from 'react';
 import styled from "styled-components";
 import MainImage from "../components/main/MainImage";
 import MainTrack from "../components/main/MainTrack";
@@ -21,22 +20,22 @@ const MainCategory = styled.div`
 
 const MainForm = () => {
 
-  const [resize, setResize] = useState();
+  // const [resize, setResize] = useState();
 
-  const handleResize = () => {
-    setResize(window.innerWidth);
-  };
+  // const handleResize = () => {
+  //   setResize(window.innerWidth);
+  // };
 
-  useEffect(() => {
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize)
-    }
-  }, []);
+  // useEffect(() => {
+  //   window.addEventListener("resize", handleResize);
+  //   return () => {
+  //     window.removeEventListener("resize", handleResize)
+  //   }
+  // }, []);
 
-  useEffect(() => {
-    console.log(resize)
-  })
+  // useEffect(() => {
+  //   console.log(resize)
+  // })
 
   const eventList = [
     {
@@ -73,11 +72,8 @@ const MainForm = () => {
         <div>
           <MainTrack mainCategory={MainCategory}></MainTrack>
           <hr style={{ margin: "0 auto", width: "1200px" }}></hr>
-          {
-            resize < 1020 ?
-              <MainEventsResizable mainCategory={MainCategory} eventList={eventList} /> :
-              <MainEvents mainCategory={MainCategory} eventList={eventList} />
-          }
+          <MainEventsResizable mainCategory={MainCategory} eventList={eventList} /> :
+          <MainEvents mainCategory={MainCategory} eventList={eventList} />
         </div>
       </MainBlock>
       <Footer />

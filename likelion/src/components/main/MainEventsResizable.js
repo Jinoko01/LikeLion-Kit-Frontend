@@ -6,6 +6,10 @@ const MainEventsBlock = styled.div`
   margin: 5rem auto;
   max-width: 340px;         
   text-align: center;
+
+  @media (min-width: 1020px) {
+    display: none;
+  }
 `;
 
 const MainEventsTitle = styled.div`
