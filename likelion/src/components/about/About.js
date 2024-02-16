@@ -5,6 +5,7 @@ import EmojiObjectsOutlinedIcon from "@mui/icons-material/EmojiObjectsOutlined";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import AboutClub from "./AboutClub";
 import Executive from "./Executive";
+import Footer from "../common/Footer";
 
 const BackgroundBlock = styled.div`
   background-color: #f0f0f0;
@@ -51,6 +52,7 @@ const About = () => {
         </p>
         <Executive />
       </AboutBlock>
+      <Footer />
     </BackgroundBlock>
   );
 };
