@@ -13,7 +13,7 @@ const ExecutiveDiv = styled.div`
   border-radius: 15px;
   box-shadow: 2px 2px 2px 2px rgb(158, 158, 158);
   background-color: white;
-  width: 25rem;
+  width: 40%;
 
   div {
     text-align: center;
@@ -51,6 +51,10 @@ const ExecutiveDiv = styled.div`
     .value {
       font-weight: 600;
     }
+  }
+
+  @media (max-width: 850px) {
+    width: 25rem;
   }
 
   @media (max-width: 500px) {
