@@ -1,10 +1,11 @@
 import MainForm from '../containers/MainForm';
+import HeaderContainer from '../containers/common/Headercontainer';
 
 const MainPage = () => {
     return (
         <div>
-            <MainForm>
-            </MainForm>
+            <HeaderContainer />
+            <MainForm />
         </div>
     );
 };

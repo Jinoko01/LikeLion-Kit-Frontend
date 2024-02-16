@@ -3,13 +3,17 @@ import Responsive from "./Responsive";
 import Button from "./Button";
 import { Link } from "react-router-dom";
 import palette from "../../lib/styles/palette";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
+import SideMenu from "./SideMenu";
+import { useRef } from "react";
 
 const HeaderBlock = styled.div`
   position: fixed;
   width: 100%;
   background-color: white;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
-  z-index: 3;
+  z-index: 31;
 `;
 
 const Wrapper = styled(Responsive)`
@@ -19,7 +23,7 @@ const Wrapper = styled(Responsive)`
   justify-content: space-between;
 
   .logo {
-    width: 5%;
+    width: 3rem;
   }
 
   .navbar {
@@ -65,12 +69,29 @@ const Wrapper = styled(Responsive)`
       & + .menu {
         margin-left: 3rem;
       }
+
+      @media (max-width: 850px) {
+        display: none;
+      }
     }
   }
 
   .right {
     display: flex;
     align-items: center;
+    @media (max-width: 850px) {
+      display: none;
+    }
+  }
+
+  .rightMenu {
+    display: none;
+    cursor: pointer;
+
+    @media (max-width: 850px) {
+      display: flex;
+      align-items: center;
+    }
   }
 `;
 
@@ -83,17 +104,31 @@ const UserInfo = styled.div`
   margin-right: 1rem;
 `;
 
-const Header = ({ user, onLogout }) => {
-  const menus = [
-    {
-      url: "/about",
-      name: "About",
-    },
-    {
-      url: "/about",
-      name: "About",
-    },
-  ];
+const menus = [
+  {
+    url: "/about",
+    name: "About",
+  },
+  {
+    url: "/",
+    name: "Project",
+  },
+  {
+    url: "/",
+    name: "Inquire",
+  },
+  {
+    url: "/",
+    name: "Assignment",
+  },
+  {
+    url: "/",
+    name: "Study",
+  },
+];
+
+const Header = ({ user, onLogout, show, setShow }) => {
+  const menuIcon = useRef(null);
 
   return (
     <>
@@ -117,18 +152,39 @@ const Header = ({ user, onLogout }) => {
             <div className="right">
               <UserInfo>{user.username}</UserInfo>
               <Button lightorange onClick={onLogout}>
-                로그아웃
+                Logout
               </Button>
             </div>
           ) : (
             <div className="right">
               <Button lightorange to="/login">
-                로그인
+                Login
               </Button>
             </div>
           )}
+          {!show ? (
+            <MenuIcon
+              className="rightMenu"
+              onClick={() => setShow(!show)}
+              ref={menuIcon}
+            />
+          ) : (
+            <CloseIcon
+              className="rightMenu"
+              onClick={() => setShow(!show)}
+              ref={menuIcon}
+            />
+          )}
         </Wrapper>
       </HeaderBlock>
+      <SideMenu
+        show={show}
+        setShow={setShow}
+        menus={menus}
+        user={user}
+        onLogout={onLogout}
+        menuIcon={menuIcon}
+      />
       <Spacer />
     </>
   );

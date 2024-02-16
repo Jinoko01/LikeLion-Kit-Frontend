@@ -1,12 +1,13 @@
 import styled from "styled-components";
 
 const ResponsiveBlock = styled.div`
-  width: 85%;
+  width: 80%;
+  max-width: 1000px;
   margin: 0 auto;
 
   @media (max-width: 748px) {
-    width: 90%;
-    min-width: 600px;
+    width: 80%;
+    min-width: 400px;
   }
 `;
 
