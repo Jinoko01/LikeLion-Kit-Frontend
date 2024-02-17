@@ -29,14 +29,14 @@ const RegisterForm = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    const { email, name, password, track, major, role, grade } = form;
+    const { email, name, password, track, major } = form;
 
-    if ([email, name, password, track, major, role, grade].includes("")) {
+    if ([email, name, password, track, major].includes("")) {
       setError("빈 칸을 모두 입력하세요.");
       return;
     }
 
-    dispatch(register({ email, name, password, track, major, role, grade }));
+    dispatch(register({ email, name, password, track, major }));
   };
 
   useEffect(() => {
