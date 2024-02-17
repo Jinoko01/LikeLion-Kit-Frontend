@@ -16,7 +16,7 @@ const Fullscreen = styled.div`
   justify-content: center;
   align-items: center;
 
-  @media (min-width: 850px) {
+  @media (min-width: 900px) {
     display: none;
   }
 `;
