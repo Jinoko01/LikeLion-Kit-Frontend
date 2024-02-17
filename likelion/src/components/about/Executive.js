@@ -51,14 +51,36 @@ const ExecutiveDiv = styled.div`
     .value {
       font-weight: 600;
     }
+
+    @media (max-width: 700px) {
+      padding-bottom: 1rem;
+    }
+
+    @media (max-width: 550px) {
+      padding-bottom: 0.8rem;
+    }
   }
 
-  @media (max-width: 850px) {
+  @media (max-width: 1000px) {
     width: 25rem;
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 700px) {
     width: 20rem;
+    font-size: 0.9rem;
+
+    .role {
+      font-size: 0.8rem;
+    }
+  }
+
+  @media (max-width: 550px) {
+    width: 15rem;
+    font-size: 0.7rem;
+
+    .role {
+      font-size: 0.58rem;
+    }
   }
 `;
 

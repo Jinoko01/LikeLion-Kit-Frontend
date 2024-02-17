@@ -70,8 +70,9 @@ const Benifit = styled.div`
   display: flex;
   flex-direction: column;
   width: 36%;
+  height: 12rem;
   margin: 0 2rem;
-  background-color: #d9d9d9;
+  background-color: white;
   border-radius: 15px;
   border: 1px solid #454545;
   padding: 0.5rem 0.7rem;
@@ -82,6 +83,7 @@ const Benifit = styled.div`
 
   @media (max-width: 650px) {
     width: 18rem;
+    height: 10rem;
     font-size: 0.8rem;
   }
 
@@ -102,10 +104,12 @@ const Benifit = styled.div`
       box-shadow: 0 1px 0 rgba(255, 255, 255, 0.34) inset,
         0 2px 0 -1px rgba(0, 0, 0, 0.13), 0 3px 0 -1px rgba(0, 0, 0, 0.08),
         0 3px 13px -1px rgba(0, 0, 0, 0.21);
+      border-radius: 3px;
     }
 
     .benifitTitle {
       padding: 0.4rem 0.6rem 0 0.6rem;
+      font-weight: 600;
     }
   }
 
@@ -117,6 +121,17 @@ const Benifit = styled.div`
 
       li {
         margin-bottom: 0.5rem;
+        font-size: 0.9rem;
+        color: #454545;
+
+        p {
+          display: inline;
+          color: #ff7710;
+        }
+
+        @media (max-width: 650px) {
+          font-size: 0.7rem;
+        }
       }
     }
   }
@@ -127,23 +142,23 @@ const benifitsArr = [
     number: 1,
     title: "온/오프라인 학습 제공",
     contents: [
-      "멋쟁이사자처럼에서 학생들의 학습을 위해 테크잇 VOD 강의를 무료로 제공합니다.",
-      "매 주 1회 오프라인 스터디를 통해 트랙 별 웹 개발 기술을 직접 배웁니다.",
+      "멋쟁이사자처럼에서 학생들의 학습을 위해 <p>테크잇 VOD 강의</p>를 무료로 제공합니다.",
+      "<p>매 주 1회 오프라인 스터디</p>를 통해 트랙 별 웹 개발 기술을 직접 배웁니다.",
     ],
   },
   {
     number: 2,
     title: "멋사에서 제공하는 대외적 행사 참여",
     contents: [
-      "아이디어톤, 해커톤, 공모전 등 다양한 행사에 참여하여 본인의 아이디어를 실현할 수 있는 기회를 얻을 수 있습니다.",
+      "<p>아이디어톤, 해커톤, 공모전</p> 등 다양한 행사에 참여하여 본인의 아이디어를 실현할 수 있는 기회를 얻을 수 있습니다.",
     ],
   },
   {
     number: 3,
     title: "네트워킹 기회 및 프로젝트 경험",
     contents: [
-      "웹 개발에 관심이 있는 사람들과의 교류를 통해 네트워킹 기회를 제공합니다.",
-      "멋사에서 진행하는 행사들에 참여하며 현업에서 필요로 하는 실전 프로젝트 경험을 쌓을 수 있습니다.",
+      "웹 개발에 관심이 있는 사람들과의 교류를 통해 <p>네트워킹 기회를 제공</p>합니다.",
+      "멋사에서 진행하는 행사들에 참여하며 현업에서 필요로 하는 <p>실전 프로젝트 경험</p>을 쌓을 수 있습니다.",
     ],
   },
   {
@@ -186,7 +201,7 @@ const AboutClub = () => {
               <div className="benifitContentDiv">
                 <ul className="benifitContent">
                   {contents.map((content) => (
-                    <li>{content}</li>
+                    <li dangerouslySetInnerHTML={{ __html: content }}></li>
                   ))}
                 </ul>
               </div>
