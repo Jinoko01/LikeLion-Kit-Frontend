@@ -3,6 +3,11 @@ import styled from "styled-components";
 const MainEventBlock = styled.div`
         min-width: 280px;
         margin-top: 50px;
+  }
+
+  @media (max-width: 650px) {
+      width: 250px;
+  }
     `
 
 const MainEventTitle = styled.div`
@@ -18,6 +23,15 @@ const MainEventTitle = styled.div`
         position: relative;
         bottom: 30px;
         box-shadow: 1px 1px 1px 1px rgb(158, 158, 158);
+
+        @media (max-width: 650px) {
+            font-size: 14px;
+            width: 200px;
+            height: 35px;
+            line-height: 35px;
+            bottom: 20px;
+            right: 10px;
+        }
     `
 
 const MainEventContent = styled.div`
@@ -31,6 +45,13 @@ const MainEventContent = styled.div`
         position: absolute;
         box-shadow: 1px 1px 1px 1px rgb(158, 158, 158);
         line-height: 20px;
+        @media (max-width: 650px) {
+            padding: 40px 20px 0 20px;
+            font-size: 11px;
+            width: 260px;
+            height: 120px;
+            line-height: 20px;
+        }
     `
 
 const MainEvent = (props) => {

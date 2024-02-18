@@ -16,26 +16,17 @@ const MainCategory = styled.div`
   font-size: 22px;
   font-weight: 900;
   font-style: italic;
+
+  @media (max-width: 650px) {
+      font-size: 18px;
+    }
+
+  @media (max-width: 350px) {
+    font-size: 15px;
+  }
 `;
 
 const MainForm = () => {
-
-  // const [resize, setResize] = useState();
-
-  // const handleResize = () => {
-  //   setResize(window.innerWidth);
-  // };
-
-  // useEffect(() => {
-  //   window.addEventListener("resize", handleResize);
-  //   return () => {
-  //     window.removeEventListener("resize", handleResize)
-  //   }
-  // }, []);
-
-  // useEffect(() => {
-  //   console.log(resize)
-  // })
 
   const eventList = [
     {
