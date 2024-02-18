@@ -10,6 +10,10 @@ const MainEventsBlock = styled.div`
   @media (min-width: 1020px) {
     display: none;
   }
+
+  @media (max-width: 1020px) {
+    width: 250px;
+  }
 `;
 
 const MainEventsTitle = styled.div`
@@ -24,10 +28,11 @@ const MainEventBlock = styled.div`
 `;
 
 const MainEventArrow = styled.img`
-  margin: 10px;
+  margin: 10px auto;
   height: 20px;
   margin-top: 110px;
   transform:rotate(90deg);
+  width: 45px;
 `;
 
 const MainEventsResizable = (props) => {
@@ -35,8 +40,8 @@ const MainEventsResizable = (props) => {
         <MainEventsBlock>
             <MainEventsTitle>
                 <props.mainCategory>▶ 주요 행사</props.mainCategory>
-                <EventIcon
-                    style={{ fontSize: "30px", margin: "2px 0 0 5px" }}
+                <EventIcon id='event_icon'
+                    style={{ fontSize: "25px", margin: "-2px 0 0 5px" }}
                 ></EventIcon>
             </MainEventsTitle>
             <MainEventBlock>
