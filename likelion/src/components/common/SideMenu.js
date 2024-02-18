@@ -69,8 +69,8 @@ const MenuBlock = styled.div`
 
     .menu {
       text-align: center;
-      padding: 0.5rem;
-      border-bottom: 1px solid ${palette.black[0]};
+      padding: 0.8rem;
+      border-bottom: 1px solid #c8c8c8;
 
       &:hover {
         background-color: ${palette.gray[1]};
