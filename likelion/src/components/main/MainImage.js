@@ -3,7 +3,7 @@ import styled, { keyframes } from "styled-components";
 const MainImage = () => {
   const MainImageBlock = styled.div`
     position: relative;
-    min-width: 290px;
+    min-width: 280px;
     margin: 0px auto;
   `;
 
