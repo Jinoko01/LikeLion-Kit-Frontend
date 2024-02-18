@@ -10,6 +10,10 @@ const MainImage = () => {
   const MainImages = styled.img`
     width: 100%;
     vertical-align: middle;
+
+     @media (max-width: 650px) {
+      height: 260px
+    }
   `;
 
   const MainText = styled.div`
@@ -32,7 +36,7 @@ const MainImage = () => {
     }
 
     @media (max-width: 650px) {
-      font-size: 2rem;
+      font-size: 1.8rem;
     }
   `;
 
@@ -46,7 +50,7 @@ const MainImage = () => {
     }
 
     @media (max-width: 650px) {
-      font-size: 0.6rem;
+      font-size: 0.5rem;
     }
   `;
 

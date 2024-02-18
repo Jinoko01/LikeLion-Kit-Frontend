@@ -76,7 +76,7 @@ const ExecutiveDiv = styled.div`
 
   @media (max-width: 550px) {
     width: 15rem;
-    font-size: 0.7rem;
+    font-size: 0.68rem;
 
     .role {
       font-size: 0.58rem;

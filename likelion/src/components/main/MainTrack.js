@@ -8,6 +8,10 @@ const MainTracksBlock = styled.div`
   @media (max-width: 850px) {
     width: 340px;
   }
+
+  @media (max-width: 650px) {
+      width: 250px;
+  }
 `;
 
 const MainTracks = styled.div`
@@ -67,6 +71,10 @@ const MainTrackDefault = styled.div`
     line-height: 200px;
     font-size: 18px;
   }
+
+  @media (max-width: 650px) {
+    font-size: 14px 
+  }
 `;
 
 const MainTrackHover = styled.div`
@@ -76,7 +84,6 @@ const MainTrackHover = styled.div`
   align-items: center;
   background-color: #2b2b2b;
   color: white;
-  font-weight: 200;
   border-radius: 20px;
   font-style: italic;
 
@@ -84,6 +91,11 @@ const MainTrackHover = styled.div`
     margin: 0 auto;
     padding: 10% 9%;
     font-size: 14px;
+  }
+
+  @media (max-width: 650px) {
+    font-size: 11px;
+    padding: 20% 10%;
   }
 `;
 
