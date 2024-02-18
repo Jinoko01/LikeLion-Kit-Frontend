@@ -36,6 +36,10 @@ const Slogan = styled.div`
     font-size: 2.5rem;
   }
 
+  @media (max-width: 300px) {
+    font-size: 1.6rem;
+  }
+
   @keyframes neon5 {
     from {
       text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ffaa55,
@@ -87,15 +91,22 @@ const Benifit = styled.div`
     font-size: 0.8rem;
   }
 
+  @media (max-width: 350px) {
+    width: 20rem;
+    font-size: 0.6rem;
+  }
+
   .benifitTitleDiv {
     display: flex;
     justify-content: flex-start;
+    align-items: center;
     margin-bottom: 1rem;
 
     .benifitNumber {
+      margin: 0;
       color: white;
       background: ${palette.lightorange[0]};
-      padding: 0.2rem 0.6rem;
+      padding: 0.2rem 0;
       width: 10%;
       text-align: center;
       border: 1px solid rgba(0, 0, 0, 0.21);
@@ -108,6 +119,7 @@ const Benifit = styled.div`
     }
 
     .benifitTitle {
+      width: 90%;
       padding: 0.4rem 0.6rem 0 0.6rem;
       font-weight: 600;
     }
@@ -131,6 +143,10 @@ const Benifit = styled.div`
 
         @media (max-width: 650px) {
           font-size: 0.7rem;
+        }
+
+        @media (max-width: 350px) {
+          font-size: 0.5rem;
         }
       }
     }
