@@ -36,6 +36,10 @@ const Slogan = styled.div`
     font-size: 2.5rem;
   }
 
+  @media (max-width: 650px) {
+    font-size: 2rem;
+  }
+
   @media (max-width: 300px) {
     font-size: 1.6rem;
   }
@@ -143,6 +147,10 @@ const Benifit = styled.div`
 
         @media (max-width: 650px) {
           font-size: 0.7rem;
+        }
+
+        @media (max-width: 450px) {
+          font-size: 0.6rem;
         }
 
         @media (max-width: 350px) {
