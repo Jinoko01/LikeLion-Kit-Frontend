@@ -30,6 +30,10 @@ const MainImage = () => {
     @media (max-width: 850px) {
       font-size: 3rem;
     }
+
+    @media (max-width: 650px) {
+      font-size: 2rem;
+    }
   `;
 
   const MainTextBottom = styled.p`
@@ -39,6 +43,10 @@ const MainImage = () => {
 
     @media (max-width: 850px) {
       font-size: 0.8rem;
+    }
+
+    @media (max-width: 650px) {
+      font-size: 0.6rem;
     }
   `;
 
