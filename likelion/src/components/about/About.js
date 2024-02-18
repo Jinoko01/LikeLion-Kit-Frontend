@@ -19,6 +19,14 @@ const AboutBlock = styled(Responsive)`
     font-size: 22px;
     font-weight: 900;
     font-style: italic;
+
+    @media (max-width: 650px) {
+      font-size: 18px;
+    }
+
+    @media (max-width: 350px) {
+      font-size: 15px;
+    }
   }
 `;
 
