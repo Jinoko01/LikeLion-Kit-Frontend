@@ -6,7 +6,7 @@ import MainEventsResizable from "../components/main/MainEventsResizable";
 import Footer from "../components/common/Footer";
 
 const MainBlock = styled.div`
-  min-width: 290px;
+  min-width: 280px;
   background-color: #f0f0f0;
   overflow-x: hidden;
   padding: 0 0 100px 0;
@@ -63,7 +63,7 @@ const MainForm = () => {
         <div>
           <MainTrack mainCategory={MainCategory}></MainTrack>
           <hr style={{ margin: "0 auto", width: "1200px" }}></hr>
-          <MainEventsResizable mainCategory={MainCategory} eventList={eventList} /> :
+          <MainEventsResizable mainCategory={MainCategory} eventList={eventList} />
           <MainEvents mainCategory={MainCategory} eventList={eventList} />
         </div>
       </MainBlock>
