@@ -52,7 +52,7 @@ const MenuBlock = styled.div`
     margin-top: 4.5rem;
 
     .button {
-      width: 26%;
+      width: 30%;
       margin: 0 auto;
       margin-top: 1.5rem;
     }
