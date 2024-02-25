@@ -61,7 +61,7 @@ const textMap = {
   register: "회원가입",
 };
 
-const AuthForm = ({ type, form, onChange, onSubmit, error }) => {
+const AuthForm = ({ type, form, onChange, onSubmit, error, changeField }) => {
   const text = textMap[type];
   return (
     <AuthFormBlock>
@@ -96,6 +96,7 @@ const AuthForm = ({ type, form, onChange, onSubmit, error }) => {
               type={type}
               name="track"
               placeholder="트랙을 입력하세요."
+              changeField={changeField}
             />
             <StyledInput
               autoComplete="major"

@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import palette from "../../lib/styles/palette";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { changeField } from "../../modules/auth";
 import { useDispatch } from "react-redux";
 
 const StyledSelect = styled.div`
@@ -41,7 +40,7 @@ const Label = styled.label`
 const SelectOptions = styled.ul`
   position: absolute;
   list-style: none;
-  top: 1rem;
+  top: 1.8rem;
   left: 0;
   width: 100%;
   display: ${(props) => (props.show ? "block" : "none")};
@@ -59,7 +58,7 @@ const Option = styled.li`
   }
 `;
 
-const SelectBox = ({ options, type, name, placeholder }) => {
+const SelectBox = ({ options, type, name, placeholder, changeField }) => {
   const [isShowOptions, setIsShowOptions] = useState(false);
   const [currentValue, setCurrentValue] = useState(placeholder);
   const ref = useRef(null);
@@ -73,14 +72,8 @@ const SelectBox = ({ options, type, name, placeholder }) => {
   useEffect(() => {
     if (currentValue === placeholder) return;
 
-    dispatch(
-      changeField({
-        form: type,
-        key: name,
-        value: currentValue,
-      })
-    );
-  }, [dispatch, name, type, currentValue, placeholder]);
+    changeField(type, name, currentValue);
+  }, [changeField, name, type, currentValue, placeholder]);
 
   useEffect(() => {
     function onClickOutside(e) {

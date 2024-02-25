@@ -1,79 +1,65 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { changeField, initializeForm, register } from "../../modules/auth";
 import AuthForm from "../../components/auth/AuthForm";
-import { check } from "../../modules/user";
 import { useNavigate } from "react-router-dom";
+import { auth } from "../../store/auth";
 
 const RegisterForm = () => {
+  const { register, changeField, initializeForm } = auth();
   const [error, setError] = useState(null);
-  const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { form, auth, authError, user } = useSelector(({ auth, user }) => ({
-    form: auth.register,
-    auth: auth.auth,
-    authError: auth.authError,
-    user: user.user,
-  }));
 
   const onChange = (e) => {
     const { value, name } = e.target;
-    dispatch(
-      changeField({
-        form: "register",
-        key: name,
-        value,
-      })
-    );
+    changeField("register", name, value);
   };
 
   const onSubmit = (e) => {
     e.preventDefault();
-    const { email, name, password, track, major } = form;
+    const { email, name, password, track, major } = register;
 
     if ([email, name, password, track, major].includes("")) {
       setError("빈 칸을 모두 입력하세요.");
       return;
     }
-
-    dispatch(register({ email, name, password, track, major }));
   };
 
   useEffect(() => {
-    dispatch(initializeForm("register"));
-  }, [dispatch]);
+    initializeForm(register);
+  }, [initializeForm]);
 
-  useEffect(() => {
-    if (authError) {
-      setError("회원가입 실패");
-      return;
-    }
+  // useEffect(() => {
+  //   if (authError) {
+  //     setError("회원가입 실패");
+  //     return;
+  //   }
 
-    if (auth) {
-      console.log("회원가입 성공");
-      console.log(auth);
-      dispatch(check());
-    }
-  }, [dispatch, auth, authError]);
+  //   if (auth) {
+  //     console.log("회원가입 성공");
+  //     console.log(auth);
+  //     dispatch(check());
+  //   }
+  // }, [dispatch, auth, authError]);
 
-  useEffect(() => {
-    if (user) {
-      navigate("/");
-    }
-    try {
-      localStorage.setItem("user", JSON.stringify(user));
-    } catch (e) {
-      console.log("localStorage is not working");
-    }
-  }, [navigate, user]);
+  // useEffect(() => {
+  //   if (user) {
+  //     navigate("/");
+  //   }
+  //   try {
+  //     localStorage.setItem("user", JSON.stringify(user));
+  //   } catch (e) {
+  //     console.log("localStorage is not working");
+  //   }
+  // }, [navigate, user]);
 
   return (
     <AuthForm
       type="register"
-      form={form}
+      form={register}
       onChange={onChange}
       onSubmit={onSubmit}
       error={error}
+      changeField={changeField}
     />
   );
 };

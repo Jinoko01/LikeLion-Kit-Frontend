@@ -5,23 +5,13 @@ export const login = ({ email, password }) =>
   client.post("/api/auth/login", { email, password });
 
 // 회원가입
-export const register = ({
-  email,
-  name,
-  password,
-  track,
-  major,
-  role,
-  grade,
-}) =>
+export const register = ({ email, name, password, track, major }) =>
   client.post("/api/auth/register", {
     email,
     name,
     password,
     track,
     major,
-    role,
-    grade,
   });
 
 // 로그인 상태 확인

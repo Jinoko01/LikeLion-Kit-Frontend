@@ -4,7 +4,8 @@ import { logout } from "../../modules/user";
 import { useCallback, useState } from "react";
 
 const HeaderContainer = () => {
-  const { user } = useSelector(({ user }) => ({ user: user.user }));
+  // const { user } = useSelector(({ user }) => ({ user: user.user }));
+  const user = JSON.parse(localStorage.getItem("user"));
   const dispatch = useDispatch();
   const onLogout = useCallback(() => {
     dispatch(logout());
