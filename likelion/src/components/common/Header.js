@@ -71,6 +71,9 @@ const Wrapper = styled(Responsive)`
 
       & + .menu {
         margin-left: 3rem;
+        @media (max-width: 1000px) {
+          margin-left: 2.5rem;
+        }
       }
 
       @media (max-width: 900px) {
