@@ -76,7 +76,7 @@ const Wrapper = styled(Responsive)`
         }
       }
 
-      @media (max-width: 900px) {
+      @media (max-width: 850px) {
         display: none;
       }
     }
@@ -85,7 +85,7 @@ const Wrapper = styled(Responsive)`
   .right {
     display: flex;
     align-items: center;
-    @media (max-width: 900px) {
+    @media (max-width: 850px) {
       display: none;
     }
   }
@@ -94,7 +94,7 @@ const Wrapper = styled(Responsive)`
     display: none;
     cursor: pointer;
 
-    @media (max-width: 900px) {
+    @media (max-width: 850px) {
       display: flex;
       align-items: center;
     }
@@ -121,26 +121,18 @@ const menus = [
   },
   {
     url: "/",
-    name: "Inquire",
-  },
-  {
-    url: "/",
-    name: "Assignment",
-  },
-  {
-    url: "/",
-    name: "Study",
+    name: "Community",
   },
 ];
 
-const Header = ({ user, onLogout, show, setShow }) => {
+const Header = ({ user, onLogout, show, setShow, MoveToTop }) => {
   const menuIcon = useRef(null);
 
   return (
     <>
       <HeaderBlock>
         <Wrapper>
-          <Link to="/" className="logo">
+          <Link to="/" className="logo" onClick={MoveToTop}>
             <img
               src={`${process.env.PUBLIC_URL}/image/logo.png`}
               alt="logo"
@@ -149,7 +141,7 @@ const Header = ({ user, onLogout, show, setShow }) => {
           </Link>
           <div className="navbar">
             {menus.map((menu) => (
-              <Link to={menu.url} className="menu">
+              <Link to={menu.url} className="menu" onClick={MoveToTop}>
                 {menu.name}
               </Link>
             ))}
