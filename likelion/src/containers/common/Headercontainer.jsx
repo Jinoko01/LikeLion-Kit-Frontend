@@ -13,6 +13,7 @@ const HeaderContainer = () => {
     window.location.reload();
   }, []);
   const [show, setShow] = useState(false);
+  const [selectShow, setSelectShow] = useState(false);
 
   const MoveToTop = () => {
     // top:0 >> 맨위로  behavior:smooth >> 부드럽게 이동할수 있게 설정하는 속성
@@ -25,6 +26,8 @@ const HeaderContainer = () => {
       onLogout={onLogout}
       show={show}
       setShow={setShow}
+      selectShow={selectShow}
+      setSelectShow={setSelectShow}
       MoveToTop={MoveToTop}
     />
   );
