@@ -1,4 +1,4 @@
-import styled, {css} from "styled-components";
+import styled, { css } from "styled-components";
 import Responsive from "./Responsive";
 import Button from "./Button";
 import { Link } from "react-router-dom";
@@ -78,9 +78,10 @@ const Wrapper = styled(Responsive)`
         display: none;
       }
 
-      .menu, .menuSelectBox {
+      .menu,
+      .menuSelectBox {
         text-decoration: none;
-        color: ${palette.black[1]}
+        color: ${palette.black[1]};
       }
     }
   }
@@ -115,16 +116,19 @@ const UserInfo = styled.div`
 
 const NavSelectBox = styled.div`
   display: none;
-  border: 1px solid ${palette.black[1]};
+  border-bottom: 1px solid ${palette.black[1]};
+  border-right: 1px solid ${palette.black[1]};
+  border-left: 1px solid ${palette.black[1]};
   background-color: white;
   position: absolute;
   top: 1.7rem;
   width: 100%;
 
-  ${(props) => 
-  props.show && css`
-    display: block;
-  `}
+  ${(props) =>
+    props.show &&
+    css`
+      display: block;
+    `}
 
   .selectMenu {
     display: block;
@@ -138,34 +142,43 @@ const NavSelectBox = styled.div`
       background-color: ${palette.gray[3]};
     }
   }
-`
+`;
 
 const menus = [
   {
     url: "/about",
     name: "About",
-    selectBox: null
+    selectBox: null,
   },
   {
     url: "/",
     name: "Project",
-    selectBox: null
+    selectBox: null,
   },
   {
     url: "/community",
     name: "Community",
-    selectBox: ["Study", "Assign", "Inquire"]
+    selectBox: ["Study", "Assign", "Inquire"],
   },
 ];
 
-const Header = ({ user, onLogout, show, setShow, selectShow, setSelectShow, MoveToTop }) => {
+const Header = ({
+  user,
+  onLogout,
+  show,
+  setShow,
+  selectShow,
+  setSelectShow,
+  MoveToTop,
+}) => {
   const menuIcon = useRef(null);
 
   const NavigationBlockEvent = (e) => {
     if (e.target.className === "menuSelectBox") {
       e.preventDefault();
     }
-  }
+    MoveToTop();
+  };
 
   return (
     <>
@@ -180,15 +193,28 @@ const Header = ({ user, onLogout, show, setShow, selectShow, setSelectShow, Move
           </Link>
           <div className="navbar">
             {menus.map((menu) => (
-              <div className="navBlock" onMouseEnter={menu.selectBox && (() => setSelectShow(true))} onMouseLeave={menu.selectBox && (() => setSelectShow(false))}>
-                <Link to={menu.url} className={`menu${menu.selectBox ? "SelectBox" : ""}`} onClick={NavigationBlockEvent}>
-                  {menu.name}{menu.selectBox ? "  ⌵" : null}
+              <div
+                className="navBlock"
+                onMouseEnter={menu.selectBox && (() => setSelectShow(true))}
+                onMouseLeave={menu.selectBox && (() => setSelectShow(false))}
+              >
+                <Link
+                  to={menu.url}
+                  className={`menu${menu.selectBox ? "SelectBox" : ""}`}
+                  onClick={NavigationBlockEvent}
+                >
+                  {menu.name}
+                  {menu.selectBox ? "  ⌵" : null}
                 </Link>
-                {menu.selectBox ? <NavSelectBox show={selectShow}>
-                  {menu.selectBox.map((select) => (
-                    <Link to={`/community/${select}`} className="selectMenu">{select}</Link>
-                  ))}
-                </NavSelectBox> : null}
+                {menu.selectBox ? (
+                  <NavSelectBox show={selectShow}>
+                    {menu.selectBox.map((select) => (
+                      <Link to={`/community/${select}`} className="selectMenu">
+                        {select}
+                      </Link>
+                    ))}
+                  </NavSelectBox>
+                ) : null}
               </div>
             ))}
           </div>
