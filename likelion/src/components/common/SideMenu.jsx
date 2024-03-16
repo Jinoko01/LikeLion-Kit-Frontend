@@ -1,8 +1,9 @@
 import { useRef, useEffect } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import Button from "./Button";
 import { Link } from "react-router-dom";
 import palette from "../../lib/styles/palette";
+import { fadeRightToLeft } from "../../lib/styles/fadeAnimation";
 
 const Fullscreen = styled.div`
   position: fixed;
@@ -28,18 +29,7 @@ const SideMenuBlock = styled.div`
   bottom: 0;
   background: white;
   width: 290px;
-
-  @keyframes fadeInRight {
-    0% {
-      opacity: 0;
-      transform: translate3d(100%, 0, 0);
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
-  animation: fadeInRight 0.2s;
+  animation: ${fadeRightToLeft} 0.2s;
 `;
 
 const MenuBlock = styled.div`
@@ -61,7 +51,12 @@ const MenuBlock = styled.div`
   .menus {
     margin-top: 3rem;
 
-    .menuLink {
+    .menuDiv {
+      position: relative;
+    }
+
+    .menuLink,
+    .menuLinkSelectBox {
       text-decoration: none;
       color: ${palette.black[1]};
       font-weight: 600;
@@ -85,7 +80,47 @@ const UserInfo = styled.div`
   font-weight: 900;
 `;
 
-const SideMenu = ({ show, setShow, menus, user, onLogout, menuIcon }) => {
+const NavSelectBox = styled.div`
+  transition: 0.5s;
+  max-height: 0;
+  overflow: hidden;
+  background-color: white;
+  position: absolute;
+  top: 2.9rem;
+  width: 100%;
+
+  ${(props) =>
+    props.show &&
+    css`
+      max-height: 400px;
+    `}
+
+  .selectMenu {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    color: ${palette.lightorange[0]};
+    border-bottom: 1px solid #c8c8c8;
+    padding: 1rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: ${palette.gray[3]};
+    }
+  }
+`;
+
+const SideMenu = ({
+  show,
+  setShow,
+  menus,
+  user,
+  onLogout,
+  menuIcon,
+  selectShow,
+  setSelectShow,
+  NavigationBlockEvent,
+}) => {
   const ref = useRef(null);
 
   useEffect(() => {
@@ -127,9 +162,28 @@ const SideMenu = ({ show, setShow, menus, user, onLogout, menuIcon }) => {
           )}
           <div className="menus">
             {menus.map((menu) => (
-              <Link to={menu.url} className="menuLink">
-                <div className="menu">{menu.name}</div>
-              </Link>
+              <div
+                className="menuDiv"
+                onMouseEnter={menu.selectBox && (() => setSelectShow(true))}
+                onMouseLeave={menu.selectBox && (() => setSelectShow(false))}
+              >
+                <Link
+                  to={menu.url}
+                  className={`menuLink${menu.selectBox ? "SelectBox" : ""}`}
+                  onClick={NavigationBlockEvent}
+                >
+                  <div className="menu">{menu.name}</div>
+                </Link>
+                {menu.selectBox && (
+                  <NavSelectBox show={selectShow}>
+                    {menu.selectBox.map((select) => (
+                      <Link to={`/community/${select}`} className="selectMenu">
+                        {select}
+                      </Link>
+                    ))}
+                  </NavSelectBox>
+                )}
+              </div>
             ))}
           </div>
         </MenuBlock>

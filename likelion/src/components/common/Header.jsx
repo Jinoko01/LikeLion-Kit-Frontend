@@ -115,8 +115,9 @@ const UserInfo = styled.div`
 `;
 
 const NavSelectBox = styled.div`
-  display: none;
-  border-bottom: 1px solid ${palette.black[1]};
+  transition: 0.5s;
+  max-height: 0;
+  overflow: hidden;
   border-right: 1px solid ${palette.black[1]};
   border-left: 1px solid ${palette.black[1]};
   background-color: white;
@@ -127,7 +128,9 @@ const NavSelectBox = styled.div`
   ${(props) =>
     props.show &&
     css`
-      display: block;
+      transition: 1s;
+      max-height: 400px;
+      border-bottom: 1px solid ${palette.black[1]};
     `}
 
   .selectMenu {
@@ -174,8 +177,12 @@ const Header = ({
   const menuIcon = useRef(null);
 
   const NavigationBlockEvent = (e) => {
-    if (e.target.className === "menuSelectBox") {
+    if (
+      e.target.className === "menuSelectBox" ||
+      e.target.className === "menuLinkSelectBox"
+    ) {
       e.preventDefault();
+      return;
     }
     MoveToTop();
   };
@@ -254,6 +261,9 @@ const Header = ({
         user={user}
         onLogout={onLogout}
         menuIcon={menuIcon}
+        selectShow={selectShow}
+        setSelectShow={setSelectShow}
+        NavigationBlockEvent={NavigationBlockEvent}
       />
       <Spacer />
     </>
