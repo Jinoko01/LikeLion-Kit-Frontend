@@ -216,7 +216,11 @@ const Header = ({
                 {menu.selectBox ? (
                   <NavSelectBox show={selectShow}>
                     {menu.selectBox.map((select) => (
-                      <Link to={`/community/${select}`} className="selectMenu">
+                      <Link
+                        to="/community"
+                        state={{ category: select }}
+                        className="selectMenu"
+                      >
                         {select}
                       </Link>
                     ))}
