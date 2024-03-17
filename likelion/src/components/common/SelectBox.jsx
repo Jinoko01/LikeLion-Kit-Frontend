@@ -1,15 +1,11 @@
 import styled from "styled-components";
 import palette from "../../lib/styles/palette";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { useDispatch } from "react-redux";
 
 const StyledSelect = styled.div`
   position: relative;
-  border: none;
   border-bottom: 1px solid ${palette.gray[5]};
   padding-bottom: 0.5rem;
-  outline: none;
-  width: 100%;
   cursor: pointer;
   &:hover {
     color: $oc-teal-7;
@@ -62,12 +58,15 @@ const SelectBox = ({ options, type, name, placeholder, changeField }) => {
   const [isShowOptions, setIsShowOptions] = useState(false);
   const [currentValue, setCurrentValue] = useState(placeholder);
   const ref = useRef(null);
-  const dispatch = useDispatch();
 
   const handleOnChangeSelectValue = useCallback((e) => {
     const { innerText } = e.target;
     setCurrentValue(innerText);
   }, []);
+
+  useEffect(() => {
+    if (currentValue === "") setCurrentValue(placeholder);
+  }, [currentValue, placeholder]);
 
   useEffect(() => {
     if (currentValue === placeholder) return;
