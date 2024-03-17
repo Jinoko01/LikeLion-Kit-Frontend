@@ -6,6 +6,8 @@ import RegisterPage from "./pages/RegisterPage";
 import AboutPage from "./pages/AboutPage";
 import { Helmet } from "react-helmet-async";
 import CommunityPage from "./pages/CommunityPage";
+import CommunityWritePage from "./pages/CommunityWritePage";
+import CommunityDetailPage from "./pages/CommunityDetailPage";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signUp" element={<RegisterPage />} />
         <Route path="/community" element={<CommunityPage />} />
+        <Route path="/write" element={<CommunityWritePage />} />
+        <Route path="/detail" element={<CommunityDetailPage />} />
       </Routes>
     </>
   );
