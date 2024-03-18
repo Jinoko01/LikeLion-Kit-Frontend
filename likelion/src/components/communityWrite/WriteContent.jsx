@@ -1,60 +1,25 @@
-import styled from "styled-components";
-import ReactQuill, { Quill } from "react-quill";
+import MDEditor from "@uiw/react-md-editor";
 import { useEffect, useState } from "react";
-import "react-quill/dist/quill.snow.css";
-
-const formats = [
-  "font",
-  "header",
-  "bold",
-  "italic",
-  "underline",
-  "strike",
-  "blockquote",
-  "list",
-  "bullet",
-  "indent",
-  "image",
-  "link",
-  "align",
-  "color",
-  "background",
-  "size",
-];
+import rehypeSanitize from "rehype-sanitize";
 
 const WriteContent = ({ changeField }) => {
-  const [value, setValue] = useState();
+  const [value, setValue] = useState("");
 
   useEffect(() => {
     changeField("write", "content", value);
   }, [value, changeField]);
 
-  const modules = {
-    toolbar: [
-      [{ font: [] }],
-      [{ size: ["small", false, "large", "huge"] }], // custom dropdown
-      [{ color: [] }, { background: [] }], // dropdown with defaults from theme
-      ["bold", "italic", "underline", "strike", "blockquote"],
-      [
-        { list: "ordered" },
-        { list: "bullet" },
-        { indent: "-1" },
-        { indent: "+1" },
-      ],
-      ["link", "image"],
-      ["clean"],
-    ],
-  };
-
   return (
-    <ReactQuill
-      theme="snow"
-      modules={modules}
-      formats={formats}
-      value={value}
-      onChange={setValue}
-      style={{ height: "25rem" }}
-    />
+    <div className="markarea">
+      <MDEditor
+        height={450}
+        value={value}
+        onChange={setValue}
+        previewOptions={{
+          rehypePlugins: [[rehypeSanitize]],
+        }}
+      />
+    </div>
   );
 };
 

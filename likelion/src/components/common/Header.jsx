@@ -188,7 +188,7 @@ const Header = ({
   };
 
   return (
-    <>
+    <div className="header">
       <HeaderBlock>
         <Wrapper>
           <Link to="/" className="logo" onClick={MoveToTop}>
@@ -270,7 +270,7 @@ const Header = ({
         NavigationBlockEvent={NavigationBlockEvent}
       />
       <Spacer />
-    </>
+    </div>
   );
 };
 

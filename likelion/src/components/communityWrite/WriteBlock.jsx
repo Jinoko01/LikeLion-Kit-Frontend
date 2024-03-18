@@ -16,6 +16,7 @@ const WriteDiv = styled.div`
   padding-bottom: 2rem;
   background-color: white;
   border-radius: 20px;
+  overflow: hidden;
 `;
 
 const TitleInput = styled.input`
@@ -36,7 +37,7 @@ const TitleInput = styled.input`
 const ContentBlock = styled.div`
   width: 80%;
   margin: 0 auto;
-  height: 27.6rem;
+  height: 30rem;
 `;
 
 const UploadButton = styled(Button)`
@@ -81,6 +82,7 @@ const WriteBlock = () => {
           <WriteContent changeField={changeField} />
         </ContentBlock>
       </WriteDiv>
+      <input type="file" />
       <UploadButton
         lightorange
         onClick={() => {

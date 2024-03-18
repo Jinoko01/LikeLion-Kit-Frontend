@@ -7,3 +7,11 @@
   -ms-user-select: none;
   user-select: none;
 }
+
+.App {
+  min-width: 360px;
+}
+
+.header {
+  min-width: none;
+}

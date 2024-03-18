@@ -13,7 +13,6 @@ const StyledSelect = styled.div`
   }
   margin-top: 1rem;
   margin-bottom: 1rem;
-  z-index: 3;
 
   &::before {
     content: "⌵";
@@ -36,6 +35,7 @@ const Label = styled.label`
 const SelectOptions = styled.ul`
   position: absolute;
   list-style: none;
+  z-index: 3;
   top: 1.8rem;
   left: 0;
   width: 100%;
@@ -48,6 +48,7 @@ const SelectOptions = styled.ul`
 const Option = styled.li`
   font-size: 1rem;
   padding: 0.3rem 0.4rem;
+  background-color: #ffffff;
   transition: background-color 0.2s ease-in;
   &:hover {
     background-color: #e8e8e8;

@@ -11,7 +11,7 @@ import CommunityDetailPage from "./pages/CommunityDetailPage";
 
 function App() {
   return (
-    <>
+    <div className="App">
       <Helmet>
         <title>금오공과대학교 멋쟁이사자처럼</title>
       </Helmet>
@@ -24,7 +24,7 @@ function App() {
         <Route path="/write" element={<CommunityWritePage />} />
         <Route path="/detail" element={<CommunityDetailPage />} />
       </Routes>
-    </>
+    </div>
   );
 }
 
